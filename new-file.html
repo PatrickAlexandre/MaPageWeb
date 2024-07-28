@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Card</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4285F4;
+            --background-color: #F4F4F4;
+            --text-color: #202124;
+            --dark-background: #202124;
+            --dark-text: #E8EAED;
+        }
+    </style>
+</head>
+<body class="bg-light text-dark">
+    <div class="fixed-top m-3">
+        <input type="checkbox" id="menu-toggle" class="d-none">
+        <label for="menu-toggle" class="h3"><i class="fas fa-bars"></i></label>
+        <div class="d-none" id="menu">
+            <button id="theme-toggle" class="btn btn-primary mt-2"><i class="fas fa-sun"></i> Toggle Theme</button>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="card mb-4 shadow-sm">
+            <div class="card-body d-flex align-items-center">
+                <img src="https://via.placeholder.com/50" alt="Character Image" class="rounded-circle mr-4">
+                <div>
+                    <h3 class="card-title">Niveau 1</h3>
+                    <div class="my-2">
+                        <span>Santé</span>
+                        <div class="progress my-1">
+                            <div class="progress-bar bg-danger" style="width: 100%;">50 / 50</div>
+                        </div>
+                    </div>
+                    <div class="my-2">
+                        <span>Mana</span>
+                        <div class="progress my-1">
+                            <div class="progress-bar bg-primary" style="width: 80%;">40 / 50</div>
+                        </div>
+                    </div>
+                    <div class="my-2">
+                        <span>Expérience</span>
+                        <div class="progress my-1">
+                            <div class="progress-bar bg-warning" style="width: 0%;">0 / 25</div>
+                        </div>
+                    </div>
+                    <div class="text-muted small my-2">Débloqué au niveau 10</div>
+                    <div class="d-flex justify-content-between">
+                        <div class="d-flex align-items-center"><i class="fas fa-gem"></i> <span>0</span></div>
+                        <div class="d-flex align-items-center"><i class="fas fa-coins"></i> <span>0</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <h4 class="card-title">InGame</h4>
+                <ul class="list-unstyled">
+                    <li class="my-1 p-2 bg-light border rounded">Attack Move Click</li>
+                    <li class="my-1 p-2 bg-light border rounded">Attack Only Champions</li>
+                    <li class="my-1 p-2 bg-light border rounded">Select Ally (F-keys)</li>
+                    <li class="my-1 p-2 bg-light border rounded">Level Up Ability</li>
+                    <li class="my-1 p-2 bg-light border rounded">Quick Cast</li>
+                    <li class="my-1 p-2 bg-light border rounded">Self-Cast</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <h4 class="card-title">Barred Actions</h4>
+                <ul class="list-unstyled">
+                    <li class="my-1 p-2 bg-danger text-white rounded">Sort interdit</li>
+                    <li class="my-1 p-2 bg-danger text-white rounded">Compétence verrouillée</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <h4 class="card-title">Liste d'amis</h4>
+                <ul class="list-unstyled">
+                    <li class="my-1 d-flex align-items-center p-2 bg-light border rounded">
+                        <img src="https://via.placeholder.com/40" alt="Friend 1" class="rounded-circle mr-2">
+                        <span>Amie 1</span>
+                    </li>
+                    <li class="my-1 d-flex align-items-center p-2 bg-light border rounded">
+                        <img src="https://via.placeholder.com/40" alt="Friend 2" class="rounded-circle mr-2">
+                        <span>Amie 2</span>
+                    </li>
+                    <li class="my-1 d-flex align-items-center p-2 bg-light border rounded">
+                        <img src="https://via.placeholder.com/40" alt="Friend 3" class="rounded-circle mr-2">
+                        <span>Amie 3</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const icon = themeToggleBtn.querySelector('i');
+
+            function toggleTheme() {
+                document.body.classList.toggle('bg-dark');
+                document.body.classList.toggle('text-light');
+                icon.classList.toggle('fa-sun');
+                icon.classList.toggle('fa-moon');
+            }
+
+            themeToggleBtn.addEventListener('click', toggleTheme);
+        });
+    </script>
+</body>
+</html>

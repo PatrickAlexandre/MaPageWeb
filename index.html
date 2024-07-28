@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma Page Web Complète</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">MaPageWeb</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">À propos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-primary text-white text-center py-5">
+        <h1>Bienvenue sur Ma Page Web</h1>
+        <p class="lead">Exemple de page web utilisant HTML5, CSS3, JavaScript, jQuery, Bootstrap, Font Awesome et Google Fonts.</p>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+        <div class="row">
+            <!-- Fonctionnalité 1 inactive -->
+            <div class="col-md-4">
+                <div class="card mb-4 bg-light">
+                    <div class="card-body text-center">
+                        <i class="fas fa-cogs fa-3x mb-3 text-muted"></i>
+                        <h5 class="card-title text-muted">Fonctionnalité Une (Inactive)</h5>
+                        <p class="card-text text-muted">Description de la fonctionnalité une.</p>
+                        <div class="alert alert-warning" role="alert">
+                            Cette fonctionnalité est actuellement inactive.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Fonctionnalité 2 active -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body text-center">
+                        <i class="fas fa-chart-bar fa-3x mb-3"></i> <!-- Icon for feature two -->
+                        <div>
+                            <h3 class="card-title">Niveau 1</h3>
+                            <div class="my-2">
+                                <span>Santé</span>
+                                <div class="progress my-1">
+                                    <div class="progress-bar bg-danger" style="width: 100%;">50 / 50</div>
+                                </div>
+                            </div>
+                            <div class="my-2">
+                                <span>Mana</span>
+                                <div class="progress my-1">
+                                    <div class="progress-bar bg-primary" style="width: 80%;">40 / 50</div>
+                                </div>
+                            </div>
+                            <div class="my-2">
+                                <span>Expérience</span>
+                                <div class="progress my-1">
+                                    <div class="progress-bar bg-warning" style="width: 0%;">0 / 25</div>
+                                </div>
+                            </div>
+                            <div class="text-muted small my-2">Débloqué au niveau 10</div>
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex align-items-center"><i class="fas fa-gem"></i> <span>0</span></div>
+                                <div class="d-flex align-items-center"><i class="fas fa-coins"></i> <span>0</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Fonctionnalité 3 inactive -->
+            <div class="col-md-4">
+                <div class="card mb-4 bg-light">
+                    <div class="card-body text-center">
+                        <i class="fas fa-heart fa-3x mb-3 text-muted"></i>
+                        <h5 class="card-title text-muted">Fonctionnalité Trois (Inactive)</h5>
+                        <p class="card-text text-muted">Description de la fonctionnalité trois.</p>
+                        <div class="alert alert-warning" role="alert">
+                            Cette fonctionnalité est actuellement inactive.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Fonctionnalité 4 inactive -->
+            <div class="col-md-4">
+                <div class="card mb-4 bg-light">
+                    <div class="card-body text-center">
+                        <i class="fas fa-solar-panel fa-3x mb-3 text-muted"></i>
+                        <h5 class="card-title text-muted">Énergie Solaire (Inactive)</h5>
+                        <p class="card-text text-muted">Utilisation de l'énergie solaire pour des solutions durables.</p>
+                        <div class="alert alert-warning" role="alert">
+                            Cette fonctionnalité est actuellement inactive.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Fonctionnalité 5 inactive -->
+            <div class="col-md-4">
+                <div class="card mb-4 bg-light">
+                    <div class="card-body text-center">
+                        <i class="fas fa-robot fa-3x mb-3 text-muted"></i>
+                        <h5 class="card-title text-muted">Automatisation Domestique (Inactive)</h5>
+                        <p class="card-text text-muted">Automatisation des tâches ménagères pour plus de confort.</p>
+                        <div class="alert alert-warning" role="alert">
+                            Cette fonctionnalité est actuellement inactive.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Fonctionnalité 6 inactive -->
+            <div class="col-md-4">
+                <div class="card mb-4 bg-light">
+                    <div class="card-body text-center">
+                        <i class="fas fa-car fa-3x mb-3 text-muted"></i>
+                        <h5 class="card-title text-muted">Véhicules Autonomes (Inactive)</h5>
+                        <p class="card-text text-muted">Véhicules autonomes pour des trajets plus sûrs et efficaces.</p>
+                        <div class="alert alert-warning" role="alert">
+                            Cette fonctionnalité est actuellement inactive.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Fonctionnalité 7 inactive -->
+            <div class="col-md-4">
+                <div class="card mb-4 bg-light">
+                    <div class="card-body text-center">
+                        <i class="fas fa-globe fa-3x mb-3 text-muted"></i>
+                        <h5 class="card-title text-muted">Internet des Objets (Inactive)</h5>
+                        <p class="card-text text-muted">Connexion des objets du quotidien pour une vie plus connectée.</p>
+                        <div class="alert alert-warning" role="alert">
+                            Cette fonctionnalité est actuellement inactive.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Fonctionnalité 8 inactive -->
+            <div class="col-md-4">
+                <div class="card mb-4 bg-light">
+                    <div class="card-body text-center">
+                        <i class="fas fa-wind fa-3x mb-3 text-muted"></i>
+                        <h5 class="card-title text-muted">Énergies Renouvelables (Inactive)</h5>
+                        <p class="card-text text-muted">Promotion des énergies renouvelables pour un avenir durable.</p>
+                        <div class="alert alert-warning" role="alert">
+                            Cette fonctionnalité est actuellement inactive.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Fonctionnalité 9 inactive -->
+            <div class="col-md-4">
+                <div class="card mb-4 bg-light">
+                    <div class="card-body text-center">
+                        <i class="fas fa-seedling fa-3x mb-3 text-muted"></i>
+                        <h5 class="card-title text-muted">Agriculture Intelligente (Inactive)</h5>
+                        <p class="card-text text-muted">Utilisation de la technologie pour une agriculture plus efficace.</p>
+                        <div class="alert alert-warning" role="alert">
+                            Cette fonctionnalité est actuellement inactive.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-light py-4 text-center">
+        <div class="container">
+            <p class="m-0">© 2024 MaPageWeb. Tous droits réservés.</p>
+            <div class="mt-2">
+                <a href="#" class="text-secondary mr-2"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-secondary mr-2"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-secondary"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            console.log("jQuery est prêt!");
+            // Ajoutez plus de fonctions jQuery ici
+        });
+    </script>
+
+    <!-- Commentaires des librairies -->
+    <!-- Bootstrap CSS -->
+    <!-- Font Awesome -->
+    <!-- Google Fonts -->
+    <!-- jQuery and Bootstrap JS -->
+</body>
+</html>
