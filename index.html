@@ -1,217 +1,75 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ma Page Web Complète</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Blog personnel de découvertes et de partage pour la famille et les amis.">
+  <title>Accueil — Projet</title>
+  <style>
+    :root{--couleur-fond:#fff;--couleur-fond-secondaire:#f7f7f8;--couleur-survol:#f1f1f2;--couleur-texte:#111;--couleur-texte-secondaire:#6f6f73;--couleur-bordure:#e7e7e9;--couleur-principale:#111;--couleur-accent:#ff3b5c;--largeur-navigation:245px;--largeur-fil:760px;--rayon-petit:10px;--rayon-moyen:16px;--transition:.2s ease}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Arial,Helvetica,sans-serif;background:var(--couleur-fond);color:var(--couleur-texte)}a{color:inherit;text-decoration:none}button,input{font:inherit}button{border:0;background:none;cursor:pointer}
+    /* 🧭 Navigation latérale */
+    .navigation-laterale{position:fixed;inset:0 auto 0 0;width:var(--largeur-navigation);height:100vh;border-right:1px solid var(--couleur-bordure);background:#fff;padding:22px 14px;display:flex;flex-direction:column;z-index:1000}.identite-site{display:flex;align-items:center;gap:12px;padding:5px 12px 26px;font-size:20px;font-weight:700}.logo-site{width:38px;height:38px;border-radius:12px;background:var(--couleur-principale);color:#fff;display:grid;place-items:center;font-weight:800}.liste-navigation{display:flex;flex-direction:column;gap:4px}.lien-navigation{display:flex;align-items:center;gap:16px;padding:12px 14px;border-radius:var(--rayon-petit);transition:var(--transition);font-size:15px}.lien-navigation:hover,.lien-navigation.actif{background:var(--couleur-survol)}.lien-navigation.actif{font-weight:700}.icone-navigation{width:26px;text-align:center;font-size:21px}.bouton-publier{margin-top:20px;background:var(--couleur-principale);color:#fff;padding:13px;border-radius:999px;text-align:center;font-weight:700}.profil-navigation{margin-top:auto;display:flex;align-items:center;gap:10px;padding:10px;border-radius:var(--rayon-moyen)}.profil-navigation:hover{background:var(--couleur-survol)}.avatar{width:40px;height:40px;border-radius:50%;background:#dedee1;display:grid;place-items:center;flex:0 0 40px}.nom-profil{font-size:14px;font-weight:700}.sous-titre-profil{font-size:12px;color:var(--couleur-texte-secondaire)}
+    /* 🧱 Page principale */
+    .page-principale{margin-left:var(--largeur-navigation);min-height:100vh}.barre-superieure{position:sticky;top:0;z-index:500;min-height:72px;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--couleur-bordure);display:flex;align-items:center;justify-content:center;padding:0 24px}.contenu-barre-superieure{width:100%;max-width:1180px;display:flex;align-items:center;gap:20px}.zone-recherche{flex:1;max-width:620px;position:relative}.champ-recherche{width:100%;height:42px;border:1px solid var(--couleur-bordure);background:var(--couleur-fond-secondaire);border-radius:999px;outline:0;padding:0 46px 0 18px}.champ-recherche:focus{background:#fff;border-color:#c7c7ca}.icone-recherche{position:absolute;right:16px;top:50%;transform:translateY(-50%)}.actions-superieures{margin-left:auto;display:flex;gap:8px}.bouton-rond{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-size:19px}.bouton-rond:hover{background:var(--couleur-survol)}
+    .structure-dashboard{max-width:1180px;margin:auto;display:grid;grid-template-columns:minmax(0,var(--largeur-fil)) 300px;gap:38px;padding:25px 24px 60px}.categories{display:flex;gap:10px;overflow-x:auto;padding-bottom:16px;scrollbar-width:none}.categories::-webkit-scrollbar{display:none}.categorie{flex:0 0 auto;padding:9px 15px;border-radius:999px;background:var(--couleur-fond-secondaire);font-size:13px}.categorie.active{background:var(--couleur-principale);color:#fff}
+    /* ✍️ Création rapide */
+    .creation-rapide{border:1px solid var(--couleur-bordure);border-radius:var(--rayon-moyen);padding:16px;margin-bottom:18px}.ligne-creation{display:flex;gap:12px;align-items:center}.champ-creation{flex:1;border:0;outline:0;background:var(--couleur-fond-secondaire);padding:12px 16px;border-radius:999px}.actions-creation{margin-top:14px;display:flex;justify-content:space-around;border-top:1px solid var(--couleur-bordure);padding-top:12px}.action-creation{color:var(--couleur-texte-secondaire);font-size:13px;padding:7px 12px;border-radius:10px}.action-creation:hover{background:var(--couleur-survol)}
+    /* 📰 Publications */
+    .publication{border:1px solid var(--couleur-bordure);border-radius:var(--rayon-moyen);margin-bottom:20px;overflow:hidden;background:#fff}.entete-publication{display:flex;align-items:center;gap:11px;padding:14px 16px}.informations-auteur{flex:1}.nom-auteur{font-size:14px;font-weight:700}.details-publication{margin-top:2px;font-size:12px;color:var(--couleur-texte-secondaire)}.menu-publication{font-size:22px;color:var(--couleur-texte-secondaire)}.media-publication{min-height:360px;color:#fff;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:40px}.media-publication.science{background:linear-gradient(135deg,#071a2e,#315f87)}.media-publication.technologie{background:linear-gradient(135deg,#141e30,#243b55)}.media-publication.histoire{background:linear-gradient(135deg,#6f5432,#b18a54)}.emoji-media{font-size:85px;margin-bottom:20px}.titre-media{font-size:26px;max-width:520px;line-height:1.15}.actions-publication{display:flex;align-items:center;gap:18px;padding:12px 16px 5px}.action-publication{display:flex;align-items:center;gap:6px;font-size:14px}.action-publication.selectionne{color:var(--couleur-accent)}.action-enregistrer{margin-left:auto}.icone-action{font-size:21px}.contenu-publication{padding:10px 16px 16px}.statistiques-publication{font-size:13px;font-weight:700;margin-bottom:8px}.description-publication{font-size:14px;line-height:1.45}.description-publication strong{margin-right:5px}.lien-suite,.voir-commentaires{color:var(--couleur-texte-secondaire)}.voir-commentaires{display:inline-block;margin-top:8px;font-size:13px}
+    /* 📌 Colonne droite */
+    .colonne-droite{position:sticky;top:95px;align-self:start}.bloc-secondaire{margin-bottom:28px}.entete-bloc{display:flex;justify-content:space-between;margin-bottom:14px}.titre-bloc{font-size:15px;font-weight:700}.lien-bloc{font-size:12px;color:var(--couleur-texte-secondaire)}.profil-suggere{display:flex;align-items:center;gap:10px;margin-bottom:14px}.profil-suggere .avatar{width:38px;height:38px;flex-basis:38px}.informations-profil-suggere{flex:1}.bouton-suivre{font-size:12px;font-weight:700;color:#0879e8}.sujet-tendance{padding:11px 0;border-bottom:1px solid var(--couleur-bordure)}.categorie-tendance,.nombre-tendance{font-size:11px;color:var(--couleur-texte-secondaire)}.titre-tendance{font-size:14px;font-weight:700;margin-top:3px}.nombre-tendance{margin-top:4px}.navigation-mobile{display:none}
+    @media(max-width:1050px){:root{--largeur-navigation:78px}.texte-identite,.texte-navigation,.informations-navigation-profil,.bouton-publier span{display:none}.navigation-laterale{align-items:center}.identite-site{padding-left:0;padding-right:0}.lien-navigation{justify-content:center;padding:13px}.bouton-publier{width:46px;height:46px;padding:0;display:grid;place-items:center}.structure-dashboard{grid-template-columns:minmax(0,1fr) 270px}}
+    @media(max-width:850px){.structure-dashboard{display:block;max-width:760px}.colonne-droite{display:none}}
+    @media(max-width:650px){:root{--largeur-navigation:0px}body{padding-bottom:68px}.navigation-laterale{display:none}.page-principale{margin-left:0}.barre-superieure{min-height:60px;padding:0 12px}.actions-superieures{display:none}.structure-dashboard{padding:12px 0 30px}.categories{padding:0 12px 14px}.creation-rapide{margin:0 10px 12px}.publication{border-left:0;border-right:0;border-radius:0;margin-bottom:10px}.media-publication{min-height:390px}.navigation-mobile{position:fixed;inset:auto 0 0 0;height:64px;background:#fff;border-top:1px solid var(--couleur-bordure);display:grid;grid-template-columns:repeat(5,1fr);z-index:2000}.lien-mobile{display:flex;align-items:center;justify-content:center;font-size:23px}.bouton-mobile-central{width:42px;height:32px;border-radius:9px;background:var(--couleur-principale);color:#fff;display:grid;place-items:center}}
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">MaPageWeb</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Accueil</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">À propos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-            </ul>
-        </div>
+  <aside class="navigation-laterale">
+    <a href="#" class="identite-site"><div class="logo-site">P</div><span class="texte-identite">Projet</span></a>
+    <nav class="liste-navigation" aria-label="Navigation principale">
+      <a href="#" class="lien-navigation actif"><span class="icone-navigation">🏠</span><span class="texte-navigation">Accueil</span></a>
+      <a href="#" class="lien-navigation"><span class="icone-navigation">🔎</span><span class="texte-navigation">Rechercher</span></a>
+      <a href="#" class="lien-navigation"><span class="icone-navigation">🧭</span><span class="texte-navigation">Découvrir</span></a>
+      <a href="#" class="lien-navigation"><span class="icone-navigation">🎬</span><span class="texte-navigation">Vidéos</span></a>
+      <a href="#" class="lien-navigation"><span class="icone-navigation">💬</span><span class="texte-navigation">Messages</span></a>
+      <a href="#" class="lien-navigation"><span class="icone-navigation">🔔</span><span class="texte-navigation">Notifications</span></a>
+      <a href="#" class="lien-navigation"><span class="icone-navigation">🔖</span><span class="texte-navigation">Enregistrés</span></a>
+      <a href="#" class="lien-navigation"><span class="icone-navigation">👤</span><span class="texte-navigation">Profil</span></a>
     </nav>
+    <a href="#" class="bouton-publier">＋ <span>Publier</span></a>
+    <a href="#" class="profil-navigation"><div class="avatar">👨</div><div class="informations-navigation-profil"><div class="nom-profil">Patrick</div><div class="sous-titre-profil">Créateur</div></div></a>
+  </aside>
 
-    <!-- Header -->
-    <header class="bg-primary text-white text-center py-5">
-        <h1>Bienvenue sur Ma Page Web</h1>
-        <p class="lead">Exemple de page web utilisant HTML5, CSS3, JavaScript, jQuery, Bootstrap, Font Awesome et Google Fonts.</p>
-    </header>
+  <main class="page-principale">
+    <header class="barre-superieure"><div class="contenu-barre-superieure"><div class="zone-recherche"><input type="search" class="champ-recherche" placeholder="Rechercher..." aria-label="Rechercher dans les publications"><span class="icone-recherche">🔎</span></div><div class="actions-superieures"><button class="bouton-rond" title="Créer">＋</button><button class="bouton-rond" title="Notifications">🔔</button><button class="bouton-rond" title="Profil">👤</button></div></div></header>
 
-    <!-- Main Content -->
-    <div class="container my-5">
-        <div class="row">
-            <!-- Fonctionnalité 1 inactive -->
-            <div class="col-md-4">
-                <div class="card mb-4 bg-light">
-                    <div class="card-body text-center">
-                        <i class="fas fa-cogs fa-3x mb-3 text-muted"></i>
-                        <h5 class="card-title text-muted">Fonctionnalité Une (Inactive)</h5>
-                        <p class="card-text text-muted">Description de la fonctionnalité une.</p>
-                        <div class="alert alert-warning" role="alert">
-                            Cette fonctionnalité est actuellement inactive.
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Fonctionnalité 2 active -->
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <div class="card-body text-center">
-                        <i class="fas fa-chart-bar fa-3x mb-3"></i> <!-- Icon for feature two -->
-                        <div>
-                            <h3 class="card-title">Niveau 1</h3>
-                            <div class="my-2">
-                                <span>Santé</span>
-                                <div class="progress my-1">
-                                    <div class="progress-bar bg-danger" style="width: 100%;">50 / 50</div>
-                                </div>
-                            </div>
-                            <div class="my-2">
-                                <span>Mana</span>
-                                <div class="progress my-1">
-                                    <div class="progress-bar bg-primary" style="width: 80%;">40 / 50</div>
-                                </div>
-                            </div>
-                            <div class="my-2">
-                                <span>Expérience</span>
-                                <div class="progress my-1">
-                                    <div class="progress-bar bg-warning" style="width: 0%;">0 / 25</div>
-                                </div>
-                            </div>
-                            <div class="text-muted small my-2">Débloqué au niveau 10</div>
-                            <div class="d-flex justify-content-between">
-                                <div class="d-flex align-items-center"><i class="fas fa-gem"></i> <span>0</span></div>
-                                <div class="d-flex align-items-center"><i class="fas fa-coins"></i> <span>0</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Fonctionnalité 3 inactive -->
-            <div class="col-md-4">
-                <div class="card mb-4 bg-light">
-                    <div class="card-body text-center">
-                        <i class="fas fa-heart fa-3x mb-3 text-muted"></i>
-                        <h5 class="card-title text-muted">Fonctionnalité Trois (Inactive)</h5>
-                        <p class="card-text text-muted">Description de la fonctionnalité trois.</p>
-                        <div class="alert alert-warning" role="alert">
-                            Cette fonctionnalité est actuellement inactive.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <!-- Fonctionnalité 4 inactive -->
-            <div class="col-md-4">
-                <div class="card mb-4 bg-light">
-                    <div class="card-body text-center">
-                        <i class="fas fa-solar-panel fa-3x mb-3 text-muted"></i>
-                        <h5 class="card-title text-muted">Énergie Solaire (Inactive)</h5>
-                        <p class="card-text text-muted">Utilisation de l'énergie solaire pour des solutions durables.</p>
-                        <div class="alert alert-warning" role="alert">
-                            Cette fonctionnalité est actuellement inactive.
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Fonctionnalité 5 inactive -->
-            <div class="col-md-4">
-                <div class="card mb-4 bg-light">
-                    <div class="card-body text-center">
-                        <i class="fas fa-robot fa-3x mb-3 text-muted"></i>
-                        <h5 class="card-title text-muted">Automatisation Domestique (Inactive)</h5>
-                        <p class="card-text text-muted">Automatisation des tâches ménagères pour plus de confort.</p>
-                        <div class="alert alert-warning" role="alert">
-                            Cette fonctionnalité est actuellement inactive.
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Fonctionnalité 6 inactive -->
-            <div class="col-md-4">
-                <div class="card mb-4 bg-light">
-                    <div class="card-body text-center">
-                        <i class="fas fa-car fa-3x mb-3 text-muted"></i>
-                        <h5 class="card-title text-muted">Véhicules Autonomes (Inactive)</h5>
-                        <p class="card-text text-muted">Véhicules autonomes pour des trajets plus sûrs et efficaces.</p>
-                        <div class="alert alert-warning" role="alert">
-                            Cette fonctionnalité est actuellement inactive.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <!-- Fonctionnalité 7 inactive -->
-            <div class="col-md-4">
-                <div class="card mb-4 bg-light">
-                    <div class="card-body text-center">
-                        <i class="fas fa-globe fa-3x mb-3 text-muted"></i>
-                        <h5 class="card-title text-muted">Internet des Objets (Inactive)</h5>
-                        <p class="card-text text-muted">Connexion des objets du quotidien pour une vie plus connectée.</p>
-                        <div class="alert alert-warning" role="alert">
-                            Cette fonctionnalité est actuellement inactive.
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Fonctionnalité 8 inactive -->
-            <div class="col-md-4">
-                <div class="card mb-4 bg-light">
-                    <div class="card-body text-center">
-                        <i class="fas fa-wind fa-3x mb-3 text-muted"></i>
-                        <h5 class="card-title text-muted">Énergies Renouvelables (Inactive)</h5>
-                        <p class="card-text text-muted">Promotion des énergies renouvelables pour un avenir durable.</p>
-                        <div class="alert alert-warning" role="alert">
-                            Cette fonctionnalité est actuellement inactive.
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Fonctionnalité 9 inactive -->
-            <div class="col-md-4">
-                <div class="card mb-4 bg-light">
-                    <div class="card-body text-center">
-                        <i class="fas fa-seedling fa-3x mb-3 text-muted"></i>
-                        <h5 class="card-title text-muted">Agriculture Intelligente (Inactive)</h5>
-                        <p class="card-text text-muted">Utilisation de la technologie pour une agriculture plus efficace.</p>
-                        <div class="alert alert-warning" role="alert">
-                            Cette fonctionnalité est actuellement inactive.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="structure-dashboard">
+      <section class="fil-principal">
+        <div class="categories"><button class="categorie active">Pour vous</button><button class="categorie">Sciences</button><button class="categorie">Technologie</button><button class="categorie">Histoire</button><button class="categorie">Nature</button><button class="categorie">Culture</button><button class="categorie">Jeux vidéo</button></div>
+
+        <div class="creation-rapide"><div class="ligne-creation"><div class="avatar">👨</div><input type="text" class="champ-creation" placeholder="Partager une découverte..."></div><div class="actions-creation"><button class="action-creation">🖼️ Photo</button><button class="action-creation">🎬 Vidéo</button><button class="action-creation">🔗 Lien</button><button class="action-creation">✍️ Article</button></div></div>
+
+        <article class="publication" data-categorie="sciences"><header class="entete-publication"><div class="avatar">🔬</div><div class="informations-auteur"><div class="nom-auteur">Patrick Alexandre</div><div class="details-publication">Sciences · il y a 2 h</div></div><button class="menu-publication">···</button></header><div class="media-publication science"><div class="emoji-media">🌌</div><h2 class="titre-media">Pourquoi les étoiles ont-elles des couleurs différentes ?</h2></div><div class="actions-publication"><button class="action-publication bouton-jaime"><span class="icone-action">♡</span><span class="compteur-jaime">42</span></button><button class="action-publication"><span class="icone-action">💬</span><span>8</span></button><button class="action-publication"><span class="icone-action">↗</span></button><button class="action-publication action-enregistrer"><span class="icone-action">🔖</span></button></div><div class="contenu-publication"><div class="statistiques-publication">42 personnes aiment cette publication</div><p class="description-publication"><strong>Patrick Alexandre</strong> Les étoiles ne sont pas simplement blanches. Leur couleur nous donne notamment des informations sur leur température. <span class="lien-suite">... plus</span></p><a href="#" class="voir-commentaires">Voir les 8 commentaires</a></div></article>
+
+        <article class="publication" data-categorie="technologie"><header class="entete-publication"><div class="avatar">🤖</div><div class="informations-auteur"><div class="nom-auteur">Patrick Alexandre</div><div class="details-publication">Technologie · hier</div></div><button class="menu-publication">···</button></header><div class="media-publication technologie"><div class="emoji-media">🧠</div><h2 class="titre-media">Comment une intelligence artificielle apprend-elle ?</h2></div><div class="actions-publication"><button class="action-publication bouton-jaime"><span class="icone-action">♡</span><span class="compteur-jaime">31</span></button><button class="action-publication"><span class="icone-action">💬</span><span>5</span></button><button class="action-publication"><span class="icone-action">↗</span></button><button class="action-publication action-enregistrer"><span class="icone-action">🔖</span></button></div><div class="contenu-publication"><div class="statistiques-publication">31 personnes aiment cette publication</div><p class="description-publication"><strong>Patrick Alexandre</strong> Une IA apprend en analysant énormément d'exemples pour détecter des régularités et produire ensuite une réponse. <span class="lien-suite">... plus</span></p></div></article>
+
+        <article class="publication" data-categorie="histoire"><header class="entete-publication"><div class="avatar">🏛️</div><div class="informations-auteur"><div class="nom-auteur">Patrick Alexandre</div><div class="details-publication">Histoire · il y a 3 jours</div></div><button class="menu-publication">···</button></header><div class="media-publication histoire"><div class="emoji-media">🏺</div><h2 class="titre-media">À quoi ressemblait réellement la vie quotidienne à Rome ?</h2></div><div class="actions-publication"><button class="action-publication bouton-jaime"><span class="icone-action">♡</span><span class="compteur-jaime">54</span></button><button class="action-publication"><span class="icone-action">💬</span><span>12</span></button><button class="action-publication"><span class="icone-action">↗</span></button><button class="action-publication action-enregistrer"><span class="icone-action">🔖</span></button></div><div class="contenu-publication"><div class="statistiques-publication">54 personnes aiment cette publication</div><p class="description-publication"><strong>Patrick Alexandre</strong> Rome n'était pas seulement composée de temples et d'empereurs. La majorité des habitants vivaient dans des logements bien plus modestes. <span class="lien-suite">... plus</span></p></div></article>
+      </section>
+
+      <aside class="colonne-droite"><section class="bloc-secondaire"><div class="entete-bloc"><h2 class="titre-bloc">Personnes proches</h2><a href="#" class="lien-bloc">Voir tout</a></div><div class="profil-suggere"><div class="avatar">👩</div><div class="informations-profil-suggere"><div class="nom-profil">Marie</div><div class="sous-titre-profil">Famille</div></div><button class="bouton-suivre">Suivre</button></div><div class="profil-suggere"><div class="avatar">👨</div><div class="informations-profil-suggere"><div class="nom-profil">Lucas</div><div class="sous-titre-profil">Ami</div></div><button class="bouton-suivre">Suivre</button></div><div class="profil-suggere"><div class="avatar">👩‍🦱</div><div class="informations-profil-suggere"><div class="nom-profil">Sophie</div><div class="sous-titre-profil">Famille</div></div><button class="bouton-suivre">Suivre</button></div></section><section class="bloc-secondaire"><div class="entete-bloc"><h2 class="titre-bloc">🔥 Sujets populaires</h2></div><div class="sujet-tendance"><div class="categorie-tendance">Sciences</div><div class="titre-tendance">Les trous noirs</div><div class="nombre-tendance">18 publications</div></div><div class="sujet-tendance"><div class="categorie-tendance">Technologie</div><div class="titre-tendance">Intelligence artificielle</div><div class="nombre-tendance">27 publications</div></div><div class="sujet-tendance"><div class="categorie-tendance">Histoire</div><div class="titre-tendance">Empire romain</div><div class="nombre-tendance">12 publications</div></div></section></aside>
     </div>
+  </main>
 
-    <!-- Footer -->
-    <footer class="bg-light py-4 text-center">
-        <div class="container">
-            <p class="m-0">© 2024 MaPageWeb. Tous droits réservés.</p>
-            <div class="mt-2">
-                <a href="#" class="text-secondary mr-2"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="text-secondary mr-2"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="text-secondary"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-        </div>
-    </footer>
+  <nav class="navigation-mobile" aria-label="Navigation mobile"><a href="#" class="lien-mobile">🏠</a><a href="#" class="lien-mobile">🔎</a><a href="#" class="lien-mobile"><span class="bouton-mobile-central">＋</span></a><a href="#" class="lien-mobile">🧭</a><a href="#" class="lien-mobile">👤</a></nav>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            console.log("jQuery est prêt!");
-            // Ajoutez plus de fonctions jQuery ici
-        });
-    </script>
-
-    <!-- Commentaires des librairies -->
-    <!-- Bootstrap CSS -->
-    <!-- Font Awesome -->
-    <!-- Google Fonts -->
-    <!-- jQuery and Bootstrap JS -->
+  <script>
+    /* ❤️ Gestion simple du bouton J'aime */
+    document.querySelectorAll('.bouton-jaime').forEach(function(bouton){bouton.addEventListener('click',function(){const compteur=bouton.querySelector('.compteur-jaime');const icone=bouton.querySelector('.icone-action');const dejaAime=bouton.classList.toggle('selectionne');let nombre=Number(compteur.textContent);nombre+=dejaAime?1:-1;compteur.textContent=nombre;icone.textContent=dejaAime?'♥':'♡'})});
+    /* 🧭 Filtrage par catégorie */
+    const boutonsCategorie=document.querySelectorAll('.categorie');const publications=document.querySelectorAll('.publication');boutonsCategorie.forEach(function(bouton){bouton.addEventListener('click',function(){boutonsCategorie.forEach(function(autreBouton){autreBouton.classList.remove('active')});bouton.classList.add('active');const categorie=bouton.textContent.trim().toLowerCase();publications.forEach(function(publication){const categoriePublication=publication.dataset.categorie;publication.style.display=(categorie==='pour vous'||categoriePublication===categorie)?'block':'none'})})});
+    /* 🔎 Recherche dans le fil */
+    const champRecherche=document.querySelector('.champ-recherche');champRecherche.addEventListener('input',function(){const recherche=champRecherche.value.toLowerCase().trim();publications.forEach(function(publication){publication.style.display=publication.textContent.toLowerCase().includes(recherche)?'block':'none'})});
+  </script>
 </body>
 </html>
